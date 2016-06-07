@@ -1,9 +1,11 @@
-﻿module Sets 
+﻿namespace Retail
 
-open System
+module RetailTypes =
 
-type Product = 
-    {
-        SkuId: String;
-        Name: String;
-    }
+    open System
+
+    type Product = 
+        {
+            SkuId: String;
+            Name: String;
+        }

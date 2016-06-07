@@ -1,9 +1,11 @@
-﻿module Retail.Fn
+﻿namespace Retail
 
-open Retail.Set
-open Retail.Samples
-open System
+module RetailFn =
 
-let searchProducts (q: String) = 
-    getProducts
-    |> List.filter (fun p -> p.Name.Contains(q))
+    open RetailTypes
+    open Samples 
+    open System
+
+    let searchProducts (q: String) = 
+        getProducts
+        |> List.filter (fun p -> p.Name.Contains(q))
