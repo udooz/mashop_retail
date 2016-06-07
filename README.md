@@ -1,0 +1,1 @@
+# mashop_retail
