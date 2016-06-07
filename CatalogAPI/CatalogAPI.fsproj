@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{411C9DF1-A922-49A9-A30A-7355724F8C90}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Catalog</RootNamespace>
-    <AssemblyName>Catalog</AssemblyName>
+    <ProjectGuid>{502D376A-41F7-44A9-8648-CA63911C165E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CatalogAPI</RootNamespace>
+    <AssemblyName>CatalogAPI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -15,7 +15,7 @@
     <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <ConsolePause>false</ConsolePause>
+    <Externalconsole>true</Externalconsole>
     <PlatformTarget>
     </PlatformTarget>
   </PropertyGroup>
@@ -26,23 +26,35 @@
     <DefineConstants>
     </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <ConsolePause>false</ConsolePause>
+    <Externalconsole>true</Externalconsole>
     <GenerateTailCalls>true</GenerateTailCalls>
     <PlatformTarget>
     </PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
-    <Reference Include="FSharp.Core" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <Reference Include="FSharp.Core">
+      <HintPath>..\packages\FSharp.Core.3.1.2.5\lib\net40\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Suave">
+      <HintPath>..\packages\Suave.1.1.2\lib\net40\Suave.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Sets.fs" />
-    <Compile Include="Samples.fs" />
-    <Compile Include="Fn.fs" />
+    <Compile Include="App.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Catalog\Catalog.fsproj">
+      <Project>{411C9DF1-A922-49A9-A30A-7355724F8C90}</Project>
+      <Name>Catalog</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
