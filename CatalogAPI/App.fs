@@ -15,7 +15,7 @@ let cfg =
 let catalogSearch = 
     request (fun r ->
         match r.queryParam "q" with
-        | Choice1Of2 q -> OK (sprintf "<h2> Search term: %s </h2>" q)
+        | Choice1Of2 q -> OK (sprintf "<h2> Search term is: %s </h2>" q)
         | Choice2Of2 msg -> BAD_REQUEST msg)
 
 let webPart = 

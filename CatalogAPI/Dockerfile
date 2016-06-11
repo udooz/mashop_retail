@@ -1,6 +1,6 @@
 FROM fsharp/fsharp:latest
+MAINTAINER Sheik Uduman Ali M
 
-COPY ./bin/Debug /app
 
 EXPOSE 8083
 
